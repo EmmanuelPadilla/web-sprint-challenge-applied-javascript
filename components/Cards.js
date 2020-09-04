@@ -50,17 +50,20 @@ function cardMaker(obj){
 
 }
 
-const cardsArray = 'https://lambda-times-api.herokuapp.com/articles'
+//  
 
 const cards = document.querySelector('cards')
-cardsArray.forEach(URL => {
-    axios.get(URL)
+
+axios.get('https://lambda-times-api.herokuapp.com/articles')
     .then (stuff =>{
-      console.log(stuff)
-      const userCard = cardMaker(stuff.data)
-      cards.appendChild(userCard)
+    console.log(stuff)
+const cardsArray = stuff.data.articles
+cardsArray.forEach(stuff => {
+
+    const userCard = cardMaker(stuff.data.articles)
+    cards.appendChild(userCard)
     })
     .catch(err =>{
-      console.log('error',err)
-  })
-  })
+    console.log('error',err)
+})
+})
