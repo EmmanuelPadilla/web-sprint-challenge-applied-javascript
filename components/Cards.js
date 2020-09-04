@@ -55,72 +55,40 @@ card.addEventListener('click', event => {
     return card
 }
 
-// const cards = document.querySelector('cards')
 
 axios.get('https://lambda-times-api.herokuapp.com/articles')
     .then (stuff =>{
-    // console.log(stuff.data.articles.bootstrap[0])
-const cardsArray = stuff.data.articles.bootstrap
+    const jqueryArray = stuff.data.articles.jquery
+    const nodeArray = stuff.data.articles.node
+    const techArray = stuff.data.articles.technology
+    const bsArray = stuff.data.articles.bootstrap
+    const jsArray = stuff.data.articles.javascript
 
-cardsArray.forEach(array => {
+    jsArray.forEach(array => {
     const userCard = cardMaker(array)
     cardsContainer.appendChild(userCard)
     })
-    .catch(err =>{
-    debugger
-})
-})
 
-axios.get('https://lambda-times-api.herokuapp.com/articles')
-    .then (stuff =>{
-    const cardsArray = stuff.data.articles.javascript
-
-    cardsArray.forEach(array => {
+    bsArray.forEach(array => {
     const userCard = cardMaker(array)
     cardsContainer.appendChild(userCard)
     })
-    .catch(err =>{
-    debugger
-})
-})
-
-axios.get('https://lambda-times-api.herokuapp.com/articles')
-    .then (stuff =>{
-    const cardsArray = stuff.data.articles.technology
-
-    cardsArray.forEach(array => {
+    techArray.forEach(array => {
     const userCard = cardMaker(array)
     cardsContainer.appendChild(userCard)
     })
-    .catch(err =>{
-    debugger
-})
-})
-
-
-axios.get('https://lambda-times-api.herokuapp.com/articles')
-    .then (stuff =>{
-    const cardsArray = stuff.data.articles.jquery
-
-    cardsArray.forEach(array => {
+    
+    nodeArray.forEach(array => {
     const userCard = cardMaker(array)
     cardsContainer.appendChild(userCard)
     })
-    .catch(err =>{
-    debugger
-})
-})
 
-
-axios.get('https://lambda-times-api.herokuapp.com/articles')
-    .then (stuff =>{
-    const cardsArray = stuff.data.articles.node
-
-    cardsArray.forEach(array => {
+    jqueryArray.forEach(array => {
     const userCard = cardMaker(array)
     cardsContainer.appendChild(userCard)
     })
+   
+})
     .catch(err =>{
     debugger
-})
 })
