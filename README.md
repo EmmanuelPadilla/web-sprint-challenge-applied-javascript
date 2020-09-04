@@ -27,17 +27,19 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+--It represents the page so that programs can change the document structure, style, and content without the page having to reload.
 
 2. What is an event?
-'an event is something that happens, either a click or a scroll, keypress etc'
+---an event is something that happens, either a click or a scroll, keypress etc'
 
 3. What is an event listener?
 you set it to listen to a "click" in a particular point of the screen, say over a button
 
 4. Why would we convert a NodeList into an Array?
+--so we can apply advanced array methods such as forEach, and use the data from the array.
 
 5. What is a component?
-a component is a reusable block of code that saves us time in formattnig data from an api.
+a component is a reusable block of code that saves us time in formatting data from an api.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -65,13 +67,13 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 Your finished project must include all of the following requirements:
 
-- [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the `index.html` file itself.
+- [X] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the `index.html` file itself.
 
-- [ ] Following the instructions in the `components/Header.js` file, create the Header.
+- [X] Following the instructions in the `components/Header.js` file, create the Header.
 
-- [ ] Following the instructions in the `components/Tabs.js` file, create the Tabs.
+- [X] Following the instructions in the `components/Tabs.js` file, create the Tabs.
 
-- [ ] Following the instructions in the `components/Cards.js` file, create the Cards.
+- [X] Following the instructions in the `components/Cards.js` file, create the Cards.
 
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
@@ -87,6 +89,6 @@ After finishing your required elements, you can push your work further. These go
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` branch (student's  Repo). **Please don't merge your own pull request**
-- [ ] Add your team lead as a reviewer on the pull-request
-- [ ] Your team lead will count the project as complete after receiving your pull-request
+- [X] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` branch (student's  Repo). **Please don't merge your own pull request**
+- [X] Add your team lead as a reviewer on the pull-request
+- [X] Your team lead will count the project as complete after receiving your pull-request
