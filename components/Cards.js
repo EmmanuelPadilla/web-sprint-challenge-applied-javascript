@@ -20,7 +20,7 @@
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
-
+const cardsContainer = document.querySelector('.cards-container')
 
 function cardMaker(obj){
     const card = document.createElement('div')
@@ -34,36 +34,93 @@ function cardMaker(obj){
     img.src = obj.authorPhoto
     aName.textContent = obj.authorName
 
+    card.classList.add('card')
+    headline.classList.add('headline')
+    author.classList.add('author')
+    imgDiv.classList.add('img-container')
+    img.classList.add('img')
+    aName.classList.add('span')
+
     card.appendChild(headline)
     card.appendChild(author)
     author.appendChild(imgDiv)
     imgDiv.appendChild(img)
     author.appendChild(aName)
 
-// card.addEventListener('click' event => {
-//     console.log(obj.headline)
-// })
-
-
-    console.log(card)
+    // cardsContainer.appendChild(card)
+card.addEventListener('click', event => {
+    console.log(headline)
+})
+    // console.log(card)
     return card
-
 }
 
-//  
-
-const cards = document.querySelector('cards')
+// const cards = document.querySelector('cards')
 
 axios.get('https://lambda-times-api.herokuapp.com/articles')
     .then (stuff =>{
-    console.log(stuff)
-const cardsArray = stuff.data.articles
-cardsArray.forEach(stuff => {
+    // console.log(stuff.data.articles.bootstrap[0])
+const cardsArray = stuff.data.articles.bootstrap
 
-    const userCard = cardMaker(stuff.data.articles)
-    cards.appendChild(userCard)
+cardsArray.forEach(array => {
+    const userCard = cardMaker(array)
+    cardsContainer.appendChild(userCard)
     })
     .catch(err =>{
-    console.log('error',err)
+    debugger
+})
+})
+
+axios.get('https://lambda-times-api.herokuapp.com/articles')
+    .then (stuff =>{
+    const cardsArray = stuff.data.articles.javascript
+
+    cardsArray.forEach(array => {
+    const userCard = cardMaker(array)
+    cardsContainer.appendChild(userCard)
+    })
+    .catch(err =>{
+    debugger
+})
+})
+
+axios.get('https://lambda-times-api.herokuapp.com/articles')
+    .then (stuff =>{
+    const cardsArray = stuff.data.articles.technology
+
+    cardsArray.forEach(array => {
+    const userCard = cardMaker(array)
+    cardsContainer.appendChild(userCard)
+    })
+    .catch(err =>{
+    debugger
+})
+})
+
+
+axios.get('https://lambda-times-api.herokuapp.com/articles')
+    .then (stuff =>{
+    const cardsArray = stuff.data.articles.jquery
+
+    cardsArray.forEach(array => {
+    const userCard = cardMaker(array)
+    cardsContainer.appendChild(userCard)
+    })
+    .catch(err =>{
+    debugger
+})
+})
+
+
+axios.get('https://lambda-times-api.herokuapp.com/articles')
+    .then (stuff =>{
+    const cardsArray = stuff.data.articles.node
+
+    cardsArray.forEach(array => {
+    const userCard = cardMaker(array)
+    cardsContainer.appendChild(userCard)
+    })
+    .catch(err =>{
+    debugger
 })
 })
